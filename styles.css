@@ -142,7 +142,17 @@ footer {
     }
 }
 
-h1, h2 {
+h1 {
+    text-align: center;
+    background-color: white;
+}
+
+footer h1{
+    color: black;
+    padding: 1px;
+}
+
+h2 {
     text-align: center;
     color: #4caf50;
 }
