@@ -26,13 +26,12 @@
         </div>
 
         <div id="content">
-            <script type="module">
-                // Plant nursery code
-                import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app-compat.js";
-                import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics-compat.js";
-                import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, FacebookAuthProvider } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth-compat.js";
+            <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app-compat.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-auth-compat.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics-compat.js"></script>
 
-                // Your web app's Firebase configuration
+            <script>
+            Your web app's Firebase configuration
                 const firebaseConfig = {
                     apiKey: "AIzaSyDq50l-F1bkwMauR5DYys3jwK5U1ePkDho",
                     authDomain: "mockupnurseryproject.firebaseapp.com",
@@ -45,10 +44,9 @@
 
                 // Initialize Firebase
                 const app = initializeApp(firebaseConfig);
-                const analytics = getAnalytics(app);
-                const auth = getAuth();
+                const analytics = firebase.analytics());
+                const auth = firebase.auth();
 
-                // ... (rest of the code remains unchanged)
             </script>
 
             <form id="registrationForm">
