@@ -9,13 +9,13 @@ body {
 h1 {
     text-align: center;
     background-color: white;
-    padding: 10px;
+    padding: 50px;
 }
 
 .sidebar {
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: -250px;
+    left: -50px;
     width: 250px;
     height: 100%;
     background-color: #4caf50;
@@ -24,7 +24,26 @@ h1 {
     overflow: auto;
 }
 
-.sidebar a {
+.menu-button {
+    display: block;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #FFF;
+    background: none;
+    border: none;
+    outline: none;
+}
+content {
+    margin-left: 0;
+    padding: 1px 16px;
+    height: 1000px;
+    transition: margin-left 0.3s ease;
+}
+
+/*.sidebar a {
     display: block;
     padding: 15px;
     text-decoration: none;
@@ -33,13 +52,14 @@ h1 {
 }
 
 
-.sidebar a.active, .sidebar a:hover:not(.active) {
+.sidebar a.active, a:hover:not(.active) {
     background-color: #555;
     color: white;
-}
+}*/
+
 
 div.content {
-    margin-left: 200px;
+    margin-left: 250px;
     padding: 1px 16px;
     height: 1000px;
 }
@@ -88,19 +108,30 @@ button:hover {
 }
 
 /* Plant List Styles */
-#plant-list {
+.plant-list {
     padding: 20px;
 }
 
 /* Shopping Cart Styles */
-#shopping-cart {
+.shopping-cart {
     background-color: #fff;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-
+/*.menu-button{
+    display: block;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #FFF;
+    background: none;
+    border: none;
+    outline: none;
+}*/
 
 /* Responsive Sidebar Styles */
 .menu-icon {
@@ -111,7 +142,7 @@ button:hover {
 }
 
 @media screen and (max-width: 600px) {
-    #sidebar {
+    .sidebar {
         display: none;
         position: fixed;
         height: 100%;
@@ -122,22 +153,26 @@ button:hover {
         padding-top: 60px;
     }
 
-    #sidebar.show {
+    .sidebar.show {
         left: 0;
     }
 
-    #content {
-        margin-left: 0;
+    /*content {
+        transition: margin-left 0.3s ease;
+    }*/
+
+    content.shifted {
+        margin-left: 250px;
     }
 
-    #sidebar a {
+    /*.sidebar a {
         padding: 15px;
         text-decoration: none;
         font-size: 16px;
         color: #818181;
         display: block;
         transition: 0.3s;
-    }
+    }*/
 
     .menu-icon {
         display: block;
@@ -157,23 +192,23 @@ h2 {
     color: #4caf50;
 }
 
-#orderForm, #shopping-cart {
+.orderForm, .shopping-cart {
     margin-top: 20px;
 }
 
-#orderForm label, #shopping-cart label {
+.orderForm label, .shopping-cart label {
     display: block;
     margin-bottom: 5px;
     color: #333;
 }
 
-#orderForm button, #shopping-cart button {
+.orderForm button, .shopping-cart button {
     margin-top: 10px;
     padding: 5px 10px;
     cursor: pointer;
 }
 
-#cart-items {
+.cart-items {
     list-style: none;
     padding: 0;
 }

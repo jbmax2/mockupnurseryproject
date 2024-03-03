@@ -69,9 +69,24 @@ function checkout() {
 // Initial setup
 renderPlantList();
 
+document.addEventListener('DOMContentLoaded' , function() {
+    const loader = document.getElementById('loader');
+    loader.style.display = 'none';
+});
 
 // Initialize the FirebaseUI Widget using Firebase.
-//var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDq50l-F1bkwMauR5DYys3jwK5U1ePkDho",
+    authDomain: "mockupnurseryproject.firebaseapp.com",
+    projectId: "mockupnurseryproject",
+    storageBucket: "mockupnurseryproject.appspot.com",
+    messagingSenderId: "331647935948",
+    appId: "1:331647935948:web:ff38ad2452dbbf42cea969",
+    measurementId: "G-Y5VCELV60F"
+  };
+
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
 ui.start('#firebaseui-auth-container', {
     signInOptions: [
@@ -150,34 +165,15 @@ function signInWithFacebook() {
 document.addEventListener('DOMContentLoaded', function () {
     const sidebar = document.getElementById('sidebar');
     const content = document.getElementById('content');
-    const menuIcon = document.createElement('div');
-    menuIcon.classList.add('menu-icon');
-    menuIcon.textContent = '☰';
+    const menuButton = document.getElementById('menu-button');
 
-    menuIcon.addEventListener('click', function () {
-        const sidebarVisible = sidebar.style.left === '0px';
-        sidebar.style.left = sidebarVisible ? '-250px' : '0';
-        content.style.marginLeft = sidebarVisible ? '0' : '250px';
+    menuButton.addEventListener('click', function() {
+        sidebar.classList.toggle('show');
+        content.classList.toggle('shifted');
+
     });
-
-    document.body.appendChild(menuIcon);
 });
 
-let isSidebarOpen = false;
-
-function toggleSidebar() {
-    isSidebarOpen = !isSidebarOpen;
-    const sidebar = document.getElementById('sidebar');
-    const content = document.getElementById('content');
-
-    if (isSidebarOpen) {
-        sidebar.style.transform = 'translateX(0)';
-        content.style.marginLeft = '250px';
-    } else {
-        sidebar.style.transform = 'translateX(-100%)';
-        content.style.marginLeft = '0';
-    }
-}
 
 function navigateTo(page) {
     console.log(`Navigating to ${page}`);
