@@ -1,0 +1,99 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tallahassee Nurseries</title>
+    <link rel="stylesheet" href="styles.css">
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+</head>
+<body>
+    <div id="app">
+        <h1>Tallahassee Nurseries</h1>
+        <!-- The surrounding HTML is left untouched by FirebaseUI.
+        Your app may use that space for branding, controls and other customizations.-->
+        <div id="firebaseui-auth-container"></div>
+        <div id="loader">Loading...</div>
+        <div id="plant-list"></div>
+
+    <div class="app">
+        <div class="sidebar" id="sidebar">
+            <a href="#" onclick="toggleSidebar();">☰</a>
+            <a href="#" onclick="navigateTo('shop');">Shop With Us</a>
+            <a href="#" onclick="navigateTo('my-account');">My Account</a>
+            <a href="#" onclick="navigateTo('about-us');">About Us</a>
+        </div>
+
+        <div id="content">
+            <script type="module">
+                // Plant nursery code
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app-compat.js";
+                import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics-compat.js";
+                import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, FacebookAuthProvider } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth-compat.js";
+
+                // Your web app's Firebase configuration
+                const firebaseConfig = {
+                    apiKey: "AIzaSyDq50l-F1bkwMauR5DYys3jwK5U1ePkDho",
+                    authDomain: "mockupnurseryproject.firebaseapp.com",
+                    projectId: "mockupnurseryproject",
+                    storageBucket: "mockupnurseryproject.appspot.com",
+                    messagingSenderId: "331647935948",
+                    appId: "1:331647935948:web:ff38ad2452dbbf42cea969",
+                    measurementId: "G-Y5VCELV60F"
+                };
+
+                // Initialize Firebase
+                const app = initializeApp(firebaseConfig);
+                const analytics = getAnalytics(app);
+                const auth = getAuth();
+
+                // ... (rest of the code remains unchanged)
+            </script>
+
+            <form id="registrationForm">
+                <label for="newEmail">Email:</label>
+                <input type="email" id="newEmail" name="newEmail" required>
+
+                <label for="newPassword">Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+
+                <button type="button" onclick="createAccount()">Create Account</button>
+            </form>
+
+            <form id="loginForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="button" onclick="signInWithEmail()">Sign In with Email</button>
+                <button type="button" onclick="signInWithGoogle()">Sign In with Google</button>
+                <button type="button" onclick="signInWithFacebook()">Sign In with Facebook</button>
+            </form>
+
+            <h2>Place Your Order</h2>
+                <form id="orderForm">
+                    <label for="plant-selection">Select a Plant:</label>
+                    <select id="plant-selection"></select>
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" min="1" value="1">
+                    <button type="button" onclick="addToCart()">Add to Cart</button>
+                </form>
+            </div>
+
+            <div id="shopping-cart">
+                <h2>Shopping Cart</h2>
+                <ul id="cart-items"></ul>
+                <button type="button" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="js/firebase-app.js"></script>
+    <script src="js/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+</body>
+</html>
