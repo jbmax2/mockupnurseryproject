@@ -6,6 +6,12 @@ body {
     padding: 0;
 }
 
+h1 {
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+}
+
 .sidebar {
     position: fixed;
     top: 0;
@@ -26,12 +32,8 @@ body {
     transition: background-color 0.3s;
 }
 
-.sidebar a.active{
-    background-color: #45a049;
-    color: white;
-}
 
-.sidebar a:hover:not(.active) {
+.sidebar a.active, .sidebar a:hover:not(.active) {
     background-color: #555;
     color: white;
 }
@@ -40,6 +42,19 @@ div.content {
     margin-left: 200px;
     padding: 1px 16px;
     height: 1000px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #4caf50;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+footer h1 {
+    color: black;
+    padding: 10px;
 }
 
 /* Form Styles */
@@ -85,13 +100,7 @@ button:hover {
     border-radius: 5px;
 }
 
-/* Footer Styles */
-footer {
-    background-color: #4caf50;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-}
+
 
 /* Responsive Sidebar Styles */
 .menu-icon {
@@ -122,7 +131,7 @@ footer {
     }
 
     #sidebar a {
-        padding: 8px 8px 8px 32px;
+        padding: 15px;
         text-decoration: none;
         font-size: 16px;
         color: #818181;
@@ -142,15 +151,6 @@ footer {
     }
 }
 
-h1 {
-    text-align: center;
-    background-color: white;
-}
-
-footer h1{
-    color: black;
-    padding: 1px;
-}
 
 h2 {
     text-align: center;
