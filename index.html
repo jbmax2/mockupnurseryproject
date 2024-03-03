@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="app">
-        <h1>Tallahassee Nurseries</h1>
+        <h1><a href="https://www.tallahasseenurseries.com/wp-content/uploads/2020/10/TLHNurseries_stackedlogo-web-1.jpg"></a></h1>
         <!-- The surrounding HTML is left untouched by FirebaseUI.
         Your app may use that space for branding, controls and other customizations.-->
         <div id="firebaseui-auth-container"></div>
@@ -18,20 +18,36 @@
         <div id="plant-list"></div>
 
     <div class="app">
-
-        <script type="module">
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app-compat.js";
-                import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics-compat.js";
-                import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, FacebookAuthProvider } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth-compat.js";
-                import * as firebaseui from 'https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js';
-        </script>
         <div class="sidebar" id="sidebar">
             <a href="#" onclick="toggleSidebar();">☰</a>
             <a href="#" onclick="navigateTo('shop');">Shop With Us</a>
             <a href="#" onclick="navigateTo('my-account');">My Account</a>
             <a href="#" onclick="navigateTo('about-us');">About Us</a>
+        </div>
+
+        <div id="content">
+            <h2>Welcome to Tallahassee Nurseries</h2>
+            <p>
+                Explore our wide selection of beautiful plants. Select your favorite plants and place your order.
+                Don't forget to check out our special offers and featured products!
+            </p>
+
+            <!-- Other sections and content can be added here -->
+
+            <h3>Featured Plants</h3>
+            <div class="featured-plants">
+                <!-- Display featured plants or other content here -->
+            </div>
+
+            <h3>Latest Arrivals</h3>
+            <div class="latest-arrivals">
+                <!-- Display latest arrivals or other content here -->
+            </div>
+
+            <!-- Add more content sections as needed -->
 
         </div>
+
 
         <div id="content">
             <script src="https://www.gstatic.com/firebasejs/10.6.0/firebase-app-compat.js"></script>
@@ -55,8 +71,7 @@
                 const analytics = firebase.analytics();
                 const auth = firebase.auth();
 
-                //Initialize the FireBaseUI Widget using Firebase.
-                const ui = new firebaseui.AuthUI(firebase.auth());
+                const ui = new firebaseui.AuthUI(auth);
 
             </script>
 
@@ -103,6 +118,5 @@
     <script src="app.js"></script>
     <script src="js/firebase-app.js"></script>
     <script src="js/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
 </body>
 </html>
