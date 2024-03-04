@@ -13,9 +13,8 @@ h1 {
 }
 
 .sidebar {
-    position: sticky;
+    position: fixed;
     top: 0;
-    left: -50px;
     width: 250px;
     height: 100%;
     background-color: #4caf50;
@@ -40,10 +39,11 @@ content {
     margin-left: 0;
     padding: 1px 16px;
     height: 1000px;
-    transition: margin-left 0.3s ease;
+    font-size: 24px;
+    color: white;
 }
 
-/*.sidebar a {
+.sidebar a {
     display: block;
     padding: 15px;
     text-decoration: none;
@@ -55,7 +55,7 @@ content {
 .sidebar a.active, a:hover:not(.active) {
     background-color: #555;
     color: white;
-}*/
+}
 
 
 div.content {
@@ -69,11 +69,6 @@ footer {
     background-color: #4caf50;
     color: #fff;
     text-align: center;
-    padding: 10px;
-}
-
-footer h1 {
-    color: black;
     padding: 10px;
 }
 
@@ -120,18 +115,6 @@ button:hover {
     border-radius: 5px;
 }
 
-/*.menu-button{
-    display: block;
-    position: fixed;
-    left: 20px;
-    top: 20px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #FFF;
-    background: none;
-    border: none;
-    outline: none;
-}*/
 
 /* Responsive Sidebar Styles */
 .menu-icon {
@@ -152,14 +135,8 @@ button:hover {
         transition: 0.5s;
         padding-top: 60px;
     }
+}
 
-    .sidebar.show {
-        left: 0;
-    }
-
-    /*content {
-        transition: margin-left 0.3s ease;
-    }*/
 
     content.shifted {
         margin-left: 250px;
