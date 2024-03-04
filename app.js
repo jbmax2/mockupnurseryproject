@@ -1,8 +1,8 @@
 // Plant nursery code
 const plants = [
-    { id: 1, name: 'Rose', price: 10 },
-    { id: 2, name: 'Lily', price: 8 },
-    { id: 3, name: 'Sunflower', price: 12 },
+    { id: 1, name: 'Rose', price: 20 },
+    { id: 2, name: 'Azelea', price: 15 },
+    { id: 3, name: 'Viburnum', price: 15 },
     // Add more plant options as needed
 ];
 
@@ -160,19 +160,6 @@ function signInWithFacebook() {
             console.error('Facebook sign-in error:', errorCode, errorMessage);
         });
 }
-
-// Sidebar function
-document.addEventListener('DOMContentLoaded', function () {
-    const sidebar = document.getElementById('sidebar');
-    const content = document.getElementById('content');
-    const menuButton = document.getElementById('menu-button');
-
-    menuButton.addEventListener('click', function() {
-        sidebar.classList.toggle('show');
-        content.classList.toggle('shifted');
-
-    });
-});
 
 
 function navigateTo(page) {
